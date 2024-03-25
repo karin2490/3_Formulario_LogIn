@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
 import {TodoInput} from './components/TodoInput'
 import {TodoList} from './components/TodoList';
-import {LoginForm} from './components/LoginForm';
 
 function App() {
-
-  const [isLoggedIn, setIsLoggedIn] = useState(false);  
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);    
-  };
 
   const [todos, setTodos] = useState([
     {
@@ -103,29 +96,19 @@ useEffect(() => {
   
   return (
     <div className='bg-gray-900 min-h-screen h-full font-inter text-gray-100 flex items-center justify-center py-20 px-5'>
-      <div className="container flex-col max-w-xl text-3xl">
-       {isLoggedIn ? (
-        <div className='bg-gray-900 min-h-screen h-full font-inter text-gray-100 flex items-center justify-center py-20 px-5'>
-          <div className="container flex-col max-w-xl">
-            <h1 className="text-5xl font-anton font-bold tracking-widest">Lista de ToDos</h1>
-              <TodoInput addTodo={addTodo} />
-                <TodoList 
-                todos={filteredTodos}
-                handleSetComplete={handleSetComplete}
-                handleDelete={handleDelete}  
-                handleClearComplete={handleClearComplete}
-                activeFilter={activeFilter}  
-                showAllTodos={showAllTodos}  
-                showActiveTodos={showActiveTodos}
-                showCompletedTodos={showCompletedTodos}
-                  />
-            </div>
-          </div>
-
-       ):(
-        <LoginForm handleLogin={handleLogin} />
-       )} 
-
+      <div className="container flex-col max-w-xl">
+      <h1 className="text-5xl font-anton font-bold tracking-widest">Lista de ToDo's</h1>
+      <TodoInput addTodo={addTodo} />
+        <TodoList 
+        todos={filteredTodos}
+        handleSetComplete={handleSetComplete}
+        handleDelete={handleDelete}  
+        handleClearComplete={handleClearComplete}
+        activeFilter={activeFilter}  
+        showAllTodos={showAllTodos}  
+        showActiveTodos={showActiveTodos}
+        showCompletedTodos={showCompletedTodos} 
+          />
       </div>
     </div>
   );
