@@ -9,7 +9,7 @@ const FiltersContainer = ({ children }) => {
 const ItemsLeft = ({ total }) => {
     return (
         <p className="text-gray-400 text-sm">
-            {total} items left
+            {total} tareas faltantes 
         </p>
     )
 };

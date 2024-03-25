@@ -5,13 +5,13 @@ export function TodoFilters  ({ total, activeFilter, showAllTodos, showActiveTod
         <FiltersContainer>
             <ItemsLeft total={total} />
             <FilterButtonContainer>
-                <FilterButton action={() => showAllTodos()} active={activeFilter} filter='All' />
-                <FilterButton action={() => showActiveTodos()} active={activeFilter} filter='Active' />
-                <FilterButton action={() => showCompletedTodos()} active={activeFilter} filter='Completed' />
+                <FilterButton action={() => showAllTodos()} active={activeFilter} filter='Todas' />
+                <FilterButton action={() => showActiveTodos()} active={activeFilter} filter='Activas' />
+                <FilterButton action={() => showCompletedTodos()} active={activeFilter} filter='Completadas' />
             </FilterButtonContainer>
 
             <button onClick={() => handleClearComplete()} className="text-gray-400 hover:text-white cursor-pointer transition-all duration-300 ease-in-out">
-                Clear Completed
+                Limpia tareas completadas
             </button>
         </FiltersContainer>
     )

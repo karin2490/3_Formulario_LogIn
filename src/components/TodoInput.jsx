@@ -22,7 +22,7 @@ export function TodoInput({addTodo}){
                 value={title}                
                 onChange={(e) => setTitle(e.target.value)}
                 onKeyDown={(e) => handleAddTodo(e)}
-                placeholder="Write the next task..."
+                placeholder="Escribe la tarea..."
             />
         </div>
     );
